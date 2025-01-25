@@ -22,7 +22,6 @@ let ekyykuuu = {
     favoriteThings: ['vanila', 'hujan', 'belajar', 'senyum'],
     isSpecial: true,
 };
-console.log(`Panggilan untuk dia: ${ekyykuuu.names.join(', ')}`);
 let munyunnku = {
     names: ['Eky Resky Auliyah Kartini Askin', 'cintakuu', 'sayangkuu', 'munyunkuuu'],
     age: 20,
@@ -30,4 +29,51 @@ let munyunnku = {
     favoriteThings: ['kopi', 'hujan', 'buku', 'musik'],
     isSpecial: true,
 };
-console.log(`Aku memanggilnya: ${munyunnku.names[1]} ❤️❤️❤️😘`);
+//   console.log(`Aku memanggilnya: ${munyunnku.names[1]} ❤️❤️❤️😘`);
+//   function
+function create() {
+    return 12;
+}
+//  arrw function
+const create2 = () => 'Helo ekyykuu';
+console.log(create());
+console.log(create2());
+// function berparameter
+function add(a, b) {
+    return a + b;
+}
+function min(a, b) {
+    return `hailsnya ${a - b}`;
+}
+const hasil1 = min(23, 6);
+console.log(hasil1);
+const hasil = add(12, 3);
+console.log(hasil);
+let sayaManusia;
+sayaManusia = 'Pangeran Juhrifar Jafar';
+console.log(sayaManusia);
+const createIntel = (prosesscor) => console.log('berhasil membuat prosesscor ' + prosesscor.brand + ' ' + prosesscor.baseModel);
+const CoreI5 = {
+    brand: "intel",
+    baseModel: 'core I5',
+    modelName: 'i5011359F',
+    clockSize: 2,
+    turboBoost: true // kalau amb maka ini diubah jadi precisionBoosts
+};
+const Ryzen7 = {
+    brand: "AMD",
+    baseModel: "Ryzen 7",
+    modelName: "5800X",
+    clockSize: 4,
+    precisionBoost: false
+};
+const Ryzen9 = {
+    brand: "AMD",
+    baseModel: "Ryzen 9",
+    modelName: "7950X",
+    clockSize: 4,
+    // presicion nggak ada
+};
+createIntel(CoreI5);
+createIntel(Ryzen7);
+createIntel(Ryzen9);

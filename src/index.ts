@@ -62,7 +62,7 @@ let ekyykuuu: Ekyykuu = {
 
 
 
-console.log(`Panggilan untuk dia: ${ekyykuuu.names.join(', ')}`);
+// console.log(`Panggilan untuk dia: ${ekyykuuu.names.join(', ')}`);
 
 
 // Mrnggunakan Interface
@@ -83,7 +83,103 @@ interface Munyunkuu {
     isSpecial: true,
   };
   
-  console.log(`Aku memanggilnya: ${munyunnku.names[1]} ❤️❤️❤️😘`);
+//   console.log(`Aku memanggilnya: ${munyunnku.names[1]} ❤️❤️❤️😘`);
   
 
-  
+//   function
+
+function create(): number {
+    return 12;
+}
+
+//  arrw function
+
+const create2 = ():string => 'Helo ekyykuu';
+
+console.log(create());
+console.log(create2());
+
+// function berparameter
+
+function add(a:number, b:number): number {
+    return a + b;
+    
+}
+
+function min(a:number, b:number): string {
+    return `hailsnya ${a - b}`;
+    
+}
+
+const hasil1 = min(23, 6);
+console.log(hasil1);
+
+const hasil = add(12, 3);
+console.log(hasil);
+
+
+// Type
+type Wanita = string;
+type Pria = boolean;
+
+type Gender = Wanita | Pria;
+
+let sayaManusia: Gender;
+sayaManusia = 'Pangeran Juhrifar Jafar';
+
+console.log(sayaManusia);
+
+
+// interface, atau hal yang ingin kita gambarkan bukan type
+// kayak ekyykuu kayak apa, pinter rajin tidur dan lain lain
+type Core = 2 | 4 | 6 | 8 | 'dual core'; // pecah juga ini juga nggak pa apa
+// yang diatas itu union, kalau pakai & maka dia harus keduanya intersection
+interface IsProsessor {
+    brand: string;
+    baseModel: string;
+    modelName: string;
+    clockSize: Core; // nah ini jika ingin lebih spesifik
+}
+//  kita bisa duplikat
+
+
+// karena dia sebuah interface maka dia bisa di extends
+
+interface Intel extends IsProsessor {
+    turboBoost: boolean;
+}
+
+interface AMD extends IsProsessor {
+    // amd tidak memeiliki turboBoost, tapi precision
+    precisionBoost?: boolean; // kita bisa tambahkan tanda tanya kalau emang nggak ada
+}
+
+const createIntel = (prosesscor : Intel | AMD): void => console.log('berhasil membuat prosesscor ' + prosesscor.brand + ' ' + prosesscor.baseModel);
+
+const CoreI5 : Intel = { // langsung kasih typenya aja juga bisa supaya nda bingung
+    brand: "intel",
+    baseModel: 'core I5',
+    modelName: 'i5011359F',
+    clockSize: 2, 
+    turboBoost: true // kalau amb maka ini diubah jadi precisionBoosts
+}
+
+const Ryzen7: AMD = {
+    brand: "AMD",
+    baseModel: "Ryzen 7",
+    modelName: "5800X",
+    clockSize: 4,
+    precisionBoost: false
+};
+
+const Ryzen9: AMD = {
+    brand: "AMD",
+    baseModel: "Ryzen 9",
+    modelName: "7950X",
+    clockSize: 4,
+    // presicion nggak ada
+};
+
+createIntel(CoreI5);
+createIntel(Ryzen7);
+createIntel(Ryzen9);
